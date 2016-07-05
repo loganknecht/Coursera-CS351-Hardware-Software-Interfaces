@@ -1,3 +1,5 @@
+#include "print_bits.h"
+
 /*
  * CSE 351 HW1 (Data Lab)
  *
@@ -107,8 +109,9 @@
  *
  *
  */
-
 #endif
+
+
 // Rating: 1
 /*
  * bitAnd - x&y using only ~ and |
@@ -119,10 +122,19 @@
  */
 int bitAnd(int x, int y) {
   // X (6)
-  // 00000110
+  //  00000110
+  // ~11111001
 
   // Y (5)
-  // 00000101
+  //  00000101
+  // ~11111010
+
+  // ~11111001
+  // ~11111010
+  // |11111011
+
+  // ~00000100
+  // printf("%s\n", );
   return 2;
 }
 
@@ -134,9 +146,9 @@ int bitAnd(int x, int y) {
  *   Max ops: 14
  *   Rating: 1
  */
-int bitXor(int x, int y) {
-  return 2;
-}
+// int bitXor(int x, int y) {
+//   return 2;
+// }
 
 
 /*
@@ -146,9 +158,9 @@ int bitXor(int x, int y) {
  *   Max ops: 8
  *   Rating: 1
  */
-int thirdBits(void) {
-  return 2;
-}
+// int thirdBits(void) {
+//   return 2;
+// }
 
 
 // Rating: 2
@@ -161,9 +173,9 @@ int thirdBits(void) {
  *   Max ops: 15
  *   Rating: 2
  */
-int fitsBits(int x, int n) {
-  return 2;
-}
+// int fitsBits(int x, int n) {
+//   return 2;
+// }
 
 
 /*
@@ -174,9 +186,9 @@ int fitsBits(int x, int n) {
  *  Max ops: 10
  *  Rating: 2
  */
-int sign(int x) {
-  return 2;
-}
+// int sign(int x) {
+//   return 2;
+// }
 
 
 /*
@@ -187,9 +199,9 @@ int sign(int x) {
  *   Max ops: 6
  *   Rating: 2
  */
-int getByte(int x, int n) {
-  return 2;
-}
+// int getByte(int x, int n) {
+//   return 2;
+// }
 
 
 // Rating: 3
@@ -201,9 +213,9 @@ int getByte(int x, int n) {
  *   Max ops: 20
  *   Rating: 3
  */
-int logicalShift(int x, int n) {
-  return 2;
-}
+// int logicalShift(int x, int n) {
+//   return 2;
+// }
 
 
 /*
@@ -214,9 +226,9 @@ int logicalShift(int x, int n) {
  *   Max ops: 20
  *   Rating: 3
  */
-int addOK(int x, int y) {
-  return 2;
-}
+// int addOK(int x, int y) {
+//   return 2;
+// }
 
 
 // Rating: 4
@@ -227,9 +239,9 @@ int addOK(int x, int y) {
  *   Max ops: 12
  *   Rating: 4
  */
-int bang(int x) {
-  return 2;
-}
+// int bang(int x) {
+//   return 2;
+// }
 
 
 // Extra Credit: Rating: 3
@@ -240,9 +252,9 @@ int bang(int x) {
  *   Max ops: 16
  *   Rating: 3
  */
-int conditional(int x, int y, int z) {
-  return 2;
-}
+// int conditional(int x, int y, int z) {
+//   return 2;
+// }
 
 
 // Extra Credit: Rating: 4
@@ -254,9 +266,9 @@ int conditional(int x, int y, int z) {
  *   Max ops: 20
  *   Rating: 4
  */
-int isPower2(int x) {
-  return 2;
-}
+// int isPower2(int x) {
+//   return 2;
+// }
 
 int main(int argc, char* argv[]) {
   bitAnd(6, 5);

@@ -1,7 +1,6 @@
-#include <limits.h>     // For UINT_MAX
-#include <stddef.h>     // For size_t type
-#include <stdio.h>      // For puts
-#include <sys/types.h>  // For uint type
+#include <limits.h>         // For UINT_MAX
+#include <stdio.h>          // For puts
+#include <sys/types.h>      // For uint type
 
 
 // Stolen from here:
@@ -9,22 +8,20 @@
 
 
 //assumes little endian
-void printBits(size_t const size, void const* const ptr)
-{
+void printBits(size_t const size, void const* const ptr) {
     unsigned char *b = (unsigned char*) ptr;
     unsigned char byte;
     int i, j;
-
-    for (i = size - 1; i >= 0; i--)
-    {
-        for (j = 7; j >= 0; j--)
-        {
+    
+    for(i = size - 1; i >= 0; i--) {
+        for(j = 7; j >= 0; j--) {
             byte = (b[i] >> j) & 1;
             printf("%u", byte);
         }
     }
     puts("");
 }
+
 
 // int main(int argv, char* argc[])
 // {

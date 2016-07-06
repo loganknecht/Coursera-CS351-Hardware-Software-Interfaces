@@ -143,18 +143,18 @@ int bitAnd(int x, int y) {
     int x_or_y = x_complement | y_complement;
     int complemented_x_or_y = ~x_or_y;
     
-    printf("X bits: ");
-    printBits(sizeof(x), &x);
-    printf("Y bits: ");
-    printBits(sizeof(y), &y);
-    printf("X complement bits: ");
-    printBits(sizeof(x_complement), &x_complement);
-    printf("Y complement bits: ");
-    printBits(sizeof(y_complement), &y_complement);
-    printf("Or'ed bits: ");
-    printBits(sizeof(x_or_y), &x_or_y);
-    printf("Complemented Or'ed bits: ");
-    printBits(sizeof(complemented_x_or_y), &complemented_x_or_y);
+    // printf("X bits: ");
+    // printBits(sizeof(x), &x);
+    // printf("Y bits: ");
+    // printBits(sizeof(y), &y);
+    // printf("X complement bits: ");
+    // printBits(sizeof(x_complement), &x_complement);
+    // printf("Y complement bits: ");
+    // printBits(sizeof(y_complement), &y_complement);
+    // printf("Or'ed bits: ");
+    // printBits(sizeof(x_or_y), &x_or_y);
+    // printf("Complemented Or'ed bits: ");
+    // printBits(sizeof(complemented_x_or_y), &complemented_x_or_y);
     
     return complemented_x_or_y;
 }
@@ -168,7 +168,43 @@ int bitAnd(int x, int y) {
  *   Rating: 1
  */
 int bitXor(int x, int y) {
-    return 2;
+    // X (4)
+    //  00000100
+    // ~11111011
+    
+    // Y (5)
+    //  00000101
+    // ~11111010
+    
+    //  11111011 X complement
+    //  00000101 Y starting value
+    // &00000001
+    // ~11111110
+    
+    //  11111010 Y complement
+    //  00000100 X starting value
+    // &00000000
+    // ~11111111
+    
+    //  11111110
+    //  11111111
+    // &11111110
+    // ~00000001
+    
+    // Expected Value
+    //  00000100
+    //  00000101
+    // ^00000001
+    
+    int x_complement = ~x;
+    int y_complement = ~y;
+    
+    int x_and_y_complement = x & y_complement;
+    int x_complement_and_y = x_complement & y;
+    
+    int output = ~(~x_and_y_complement & ~x_complement_and_y);
+    
+    return output;
 }
 
 
@@ -180,6 +216,19 @@ int bitXor(int x, int y) {
  *   Rating: 1
  */
 int thirdBits(void) {
+
+    // int x_complement = ~x;
+    // int x_complement_and_y = x_complement & y;
+    
+    // printf("X bits: ");
+    // printBits(sizeof(x), &x);
+    // printf("Y bits: ");
+    // printBits(sizeof(y), &y);
+    // printf("X complement bits: ");
+    // printBits(sizeof(x_complement), &x_complement);
+    // printf("And'ed bits: ");
+    // printBits(sizeof(x_complement_and_y), &x_complement_and_y);
+    
     return 2;
 }
 
@@ -292,7 +341,17 @@ int isPower2(int x) {
 }
 
 int main(int argc, char* argv[]) {
-    bitAnd(6, 5);
+    // int bit_and_result = bitAnd(5, 6);
+    // int bit_and_result = bitAnd(6, 5);
+    // printBits(sizeof(bit_and_result), &bit_and_result);
+    printf("=======\n");
+    // int bit_or_result = bitXor(4, 5);
+    // int bit_or_result = bitXor(5, 4);
+    // printBits(sizeof(bit_or_result), &bit_or_result);
+    printf("=======\n");
+    
+    
+    // thirdBits();
     // float f = 23.45f;
     // printBits(sizeof(f), &f);
 }

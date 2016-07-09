@@ -1,3 +1,4 @@
+#include <math.h>          // For puts
 #include <stdio.h>          // For puts
 #include "print_bits.h"
 
@@ -216,6 +217,7 @@ int bitXor(int x, int y) {
  *   Rating: 1
  */
 int thirdBits(void) {
+    // TODO: FAIL - REMOVE THE FOR LOOP
     int bit_offset = 3;
     
     long int_byte_size = sizeof(int);
@@ -247,7 +249,26 @@ int thirdBits(void) {
  *   Rating: 2
  */
 int fitsBits(int x, int n) {
-    return 2;
+
+    // INCORRECT SOLUTION
+    // fitsBits(5,3) = 0         5 = number 3 = bits to support
+    // Not negative, return 0
+    // fitsBits(-4,3) = 1   -   -4 = number 3 = bits to support
+    // if (2 ^ n - 1) < x
+    //     continue
+    // 100 -> 011
+    // int max_bit_value = (int)pow((double) 2, (n - 1));
+    // int can_bit_fit = ((max_bit_value >= x) ? 1 : 0);
+    // int is_x_less_than_zero = (x < 0);
+    
+    // // only process if x < 0, because a twos complement has to be negative
+    // if(!is_x_less_than_zero) {
+    //     can_bit_fit = 0;
+    // }
+    
+    // return can_bit_fit;
+    //--------------------------------------------------------------------------
+    return (1 << (n - 1) > x);
 }
 
 
@@ -355,6 +376,9 @@ int main(int argc, char* argv[]) {
     // printf("=======\n");
     // int third_bit =
     // thirdBits();
+    // printf("=======\n");
+    printf("fitsBits(5,3): %i\n", fitsBits(5, 3));
+    printf("fitsBits(-4,3): %i\n", fitsBits(-4, 3));
     // printf("=======\n");
     
     

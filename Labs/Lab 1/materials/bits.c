@@ -216,20 +216,23 @@ int bitXor(int x, int y) {
  *   Rating: 1
  */
 int thirdBits(void) {
-
-    // int x_complement = ~x;
-    // int x_complement_and_y = x_complement & y;
+    int bit_offset = 3;
     
-    // printf("X bits: ");
-    // printBits(sizeof(x), &x);
-    // printf("Y bits: ");
-    // printBits(sizeof(y), &y);
-    // printf("X complement bits: ");
-    // printBits(sizeof(x_complement), &x_complement);
-    // printf("And'ed bits: ");
-    // printBits(sizeof(x_complement_and_y), &x_complement_and_y);
+    long int_byte_size = sizeof(int);
+    long int_bit_size = int_byte_size * 8;
     
-    return 2;
+    int bits_to_return = 0;
+    
+    for(int i = 0; i < int_bit_size; i = i + 1) {
+        bits_to_return = bits_to_return | 1;
+        bits_to_return = bits_to_return << bit_offset;
+    }
+    bits_to_return = bits_to_return | 1;
+    // printf("int bit size: %lu\n", int_bit_size);
+    // printf("int byte size: %lu\n", int_byte_size);
+    // printBits(sizeof(bits_to_return), &bits_to_return);
+    
+    return bits_to_return;
 }
 
 
@@ -344,11 +347,14 @@ int main(int argc, char* argv[]) {
     // int bit_and_result = bitAnd(5, 6);
     // int bit_and_result = bitAnd(6, 5);
     // printBits(sizeof(bit_and_result), &bit_and_result);
-    printf("=======\n");
+    // printf("=======\n");
     // int bit_or_result = bitXor(4, 5);
     // int bit_or_result = bitXor(5, 4);
     // printBits(sizeof(bit_or_result), &bit_or_result);
-    printf("=======\n");
+    // printf("=======\n");
+    // int third_bit =
+    thirdBits();
+    // printf("=======\n");
     
     
     // thirdBits();

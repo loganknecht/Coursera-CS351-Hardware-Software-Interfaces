@@ -344,6 +344,7 @@ int isPower2(int x) {
 }
 
 int main(int argc, char* argv[]) {
+    printf("Beginning main loop in bits.c\n");
     // int bit_and_result = bitAnd(5, 6);
     // int bit_and_result = bitAnd(6, 5);
     // printBits(sizeof(bit_and_result), &bit_and_result);
@@ -353,7 +354,7 @@ int main(int argc, char* argv[]) {
     // printBits(sizeof(bit_or_result), &bit_or_result);
     // printf("=======\n");
     // int third_bit =
-    thirdBits();
+    // thirdBits();
     // printf("=======\n");
     
     

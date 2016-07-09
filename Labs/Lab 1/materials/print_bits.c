@@ -1,4 +1,3 @@
-#include <limits.h>         // For UINT_MAX
 #include <stdio.h>          // For puts
 #include <sys/types.h>      // For uint type
 

@@ -16,6 +16,7 @@
  * it's not good practice to ignore compiler warnings, but in this
  * case it's OK.
  */
+int printf(const char *, ...);
 
 #if 0
 /*
@@ -249,7 +250,9 @@ int thirdBits(void) {
  *   Rating: 2
  */
 int fitsBits(int x, int n) {
-
+    // Twos complement reading
+    // https://www.cs.cornell.edu/~tomf/notes/cps104/twoscomp.html
+    
     // INCORRECT SOLUTION
     // fitsBits(5,3) = 0         5 = number 3 = bits to support
     // Not negative, return 0
@@ -268,6 +271,9 @@ int fitsBits(int x, int n) {
     
     // return can_bit_fit;
     //--------------------------------------------------------------------------
+    // CORRECT SOLUTION
+    // I think this is still incorrect because I'm not allowed logic operators
+    // :(
     return (1 << (n - 1) > x);
 }
 
@@ -281,6 +287,25 @@ int fitsBits(int x, int n) {
  *  Rating: 2
  */
 int sign(int x) {
+    // INCORRECT SOLUTION
+    // if(x == 0) {
+    //     return 0;
+    // }
+    // else if(x > 0) {
+    //     return 1;
+    // }
+    // else {
+    //     return -1;
+    // }
+    //--------------------------------------------------------------------------
+    // CORRECT SOLUTION
+    // printBits(sizeof(bits_to_return), &bits_to_return);
+    // Because integers are twos complement solutions this means that a negative
+    // integer will have a 0 as the most significant bit, and a positive number
+    // will have 1 as the most significat bit.
+    // long int_byte_size = sizeof(int);
+    // long int_bit_size = int_byte_size * 8;
+    
     return 2;
 }
 
@@ -377,12 +402,10 @@ int main(int argc, char* argv[]) {
     // int third_bit =
     // thirdBits();
     // printf("=======\n");
-    printf("fitsBits(5,3): %i\n", fitsBits(5, 3));
-    printf("fitsBits(-4,3): %i\n", fitsBits(-4, 3));
+    // printf("fitsBits(5,3): %i\n", fitsBits(5, 3));
+    // printf("fitsBits(-4,3): %i\n", fitsBits(-4, 3));
     // printf("=======\n");
-    
-    
-    // thirdBits();
-    // float f = 23.45f;
-    // printBits(sizeof(f), &f);
+    // printf("sign(-23): %i\n", sign(-23));
+    // printf("sign(0): %i\n", sign(0));
+    // printf("sign(130): %i\n", sign(130));
 }

@@ -1,15 +1,14 @@
 # Important Notes
-## Section 1
-
+## Section 0
 Nothing of value in this section
 
-## Section 2
+## Section 1
 - Electronically storing bits is determined by the voltage
   - 0.0V to 0.5V is off
   - 2.8V to 3.3V is on
   - intermediate ranges is what determines speed in computer because that change between state delays
 
-## Section 3
+## Section 2
 ### Machine Words
 - size is determined by architecture  
   - Until recently, most machines used 32-bit (4-byte) words  

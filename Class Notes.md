@@ -34,3 +34,25 @@ Nothing of value in this section
 - Syntax
   - & is used to find the ‘address of a value’
   - * is used to find the ‘value at an address in memory’ or ‘dereference the address’
+
+### De Morgans Law
+- not(A and B) == not(A) or not(B)
+  - True Condition
+    - Either A, B or both is False
+  - False Condition
+    - Both A and B need must be True
+  - Only fails when A and B are both True
+  - not(1 and 1) == FALSE
+  - not(1 and 0) == TRUE
+  - not(0 and 1) == TRUE
+  - not(0 and 0) == TRUE
+
+- not(A or B) == not(A) and not(B)
+  - True Condition
+    - Both A and B must be False
+  - False Condition
+    - Either A and B are both True
+  - not(1 or 1) == FALSE
+  - not(1 or 0) == FALSE
+  - not(0 or 1) == FALSE 
+  - not(0 or 0) == TRUE

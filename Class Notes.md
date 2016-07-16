@@ -36,8 +36,14 @@ Nothing of value in this section
     - is used to find the ‘address of a value’
   - *
     - is used to find the ‘value at an address in memory’ or ‘dereference the address’
+
+### C Syntax
   - !!X
     - Converts X to a boolean value
+  - Using << to do base 2 mutliplication
+    - This only works for base 2 multiplication
+    - x << 2 == x * 2^2
+    - x << y == x * 2^y
 
 ### De Morgans Law
 - not(A and B) == not(A) or not(B)

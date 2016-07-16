@@ -32,8 +32,12 @@ Nothing of value in this section
 
 ### Addresses and Pointers in C
 - Syntax
-  - & is used to find the ‘address of a value’
-  - * is used to find the ‘value at an address in memory’ or ‘dereference the address’
+  - &
+    - is used to find the ‘address of a value’
+  - *
+    - is used to find the ‘value at an address in memory’ or ‘dereference the address’
+  - !!X
+    - Converts X to a boolean value
 
 ### De Morgans Law
 - not(A and B) == not(A) or not(B)

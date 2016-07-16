@@ -119,9 +119,13 @@ int doubleSize() {
  * Return the size of a pointer in bytes.
  */
 int pointerSize() {
-    double * ptrArray[10];
-    double ** ptrPtr1;
-    double ** ptrPtr2;
+    // double * ptrArray[10];
+    // double ** ptrPtr1;
+    // double ** ptrPtr2;
+
+    double* ptrArray[10];
+    double** ptrPtr1;
+    double** ptrPtr2;
     // TODO: Write code to compute size of a pointer.
 
     return 2;
@@ -132,11 +136,13 @@ int pointerSize() {
  * pointer arithmetic.
  */
 int changeValue() {
+    // *, &, -, +, *, <<, >>, ~, ==, ^
     int intArray[10];
-    int * intPtr1 = intArray;
-    int * intPtr2;
-    // TODO: Write code to change value of intArray[5] to 351 using only
-    //       intPtr1 and the + operator.
+    int* intPtr1 = intArray;
+    int* intPtr2;
+
+    intPtr2 = intArray + 5;
+    *intPtr2 = 351;
 
     return intArray[5];
 }

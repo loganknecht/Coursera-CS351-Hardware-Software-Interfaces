@@ -124,41 +124,41 @@ int printf(const char *, ...);
  *   Rating: 1
  */
 int bitAnd(int x, int y) {
-    // X (6)
-    //  00000110
-    // ~11111001
-    
-    // Y (5)
-    //  00000101
-    // ~11111010
-    
-    // ~11111001
-    // ~11111010
-    // |11111011
-    
-    // ~00000100
-    // printf("%s\n", );
-    
-    int x_complement = ~x;
-    int y_complement = ~y;
-    
-    int x_or_y = x_complement | y_complement;
-    int complemented_x_or_y = ~x_or_y;
-    
-    // printf("X bits: ");
-    // printBits(sizeof(x), &x);
-    // printf("Y bits: ");
-    // printBits(sizeof(y), &y);
-    // printf("X complement bits: ");
-    // printBits(sizeof(x_complement), &x_complement);
-    // printf("Y complement bits: ");
-    // printBits(sizeof(y_complement), &y_complement);
-    // printf("Or'ed bits: ");
-    // printBits(sizeof(x_or_y), &x_or_y);
-    // printf("Complemented Or'ed bits: ");
-    // printBits(sizeof(complemented_x_or_y), &complemented_x_or_y);
-    
-    return complemented_x_or_y;
+  // X (6)
+  //  00000110
+  // ~11111001
+
+  // Y (5)
+  //  00000101
+  // ~11111010
+
+  // ~11111001
+  // ~11111010
+  // |11111011
+
+  // ~00000100
+  // printf("%s\n", );
+
+  int x_complement = ~x;
+  int y_complement = ~y;
+
+  int x_or_y = x_complement | y_complement;
+  int complemented_x_or_y = ~x_or_y;
+
+  // printf("X bits: ");
+  // printBits(sizeof(x), &x);
+  // printf("Y bits: ");
+  // printBits(sizeof(y), &y);
+  // printf("X complement bits: ");
+  // printBits(sizeof(x_complement), &x_complement);
+  // printf("Y complement bits: ");
+  // printBits(sizeof(y_complement), &y_complement);
+  // printf("Or'ed bits: ");
+  // printBits(sizeof(x_or_y), &x_or_y);
+  // printf("Complemented Or'ed bits: ");
+  // printBits(sizeof(complemented_x_or_y), &complemented_x_or_y);
+
+  return complemented_x_or_y;
 }
 
 
@@ -170,43 +170,43 @@ int bitAnd(int x, int y) {
  *   Rating: 1
  */
 int bitXor(int x, int y) {
-    // X (4)
-    //  00000100
-    // ~11111011
-    
-    // Y (5)
-    //  00000101
-    // ~11111010
-    
-    //  11111011 X complement
-    //  00000101 Y starting value
-    // &00000001
-    // ~11111110
-    
-    //  11111010 Y complement
-    //  00000100 X starting value
-    // &00000000
-    // ~11111111
-    
-    //  11111110
-    //  11111111
-    // &11111110
-    // ~00000001
-    
-    // Expected Value
-    //  00000100
-    //  00000101
-    // ^00000001
-    
-    int x_complement = ~x;
-    int y_complement = ~y;
-    
-    int x_and_y_complement = x & y_complement;
-    int x_complement_and_y = x_complement & y;
-    
-    int output = ~(~x_and_y_complement & ~x_complement_and_y);
-    
-    return output;
+  // X (4)
+  //  00000100
+  // ~11111011
+
+  // Y (5)
+  //  00000101
+  // ~11111010
+
+  //  11111011 X complement
+  //  00000101 Y starting value
+  // &00000001
+  // ~11111110
+
+  //  11111010 Y complement
+  //  00000100 X starting value
+  // &00000000
+  // ~11111111
+
+  //  11111110
+  //  11111111
+  // &11111110
+  // ~00000001
+
+  // Expected Value
+  //  00000100
+  //  00000101
+  // ^00000001
+
+  int x_complement = ~x;
+  int y_complement = ~y;
+
+  int x_and_y_complement = x & y_complement;
+  int x_complement_and_y = x_complement & y;
+
+  int output = ~(~x_and_y_complement & ~x_complement_and_y);
+
+  return output;
 }
 
 
@@ -218,24 +218,24 @@ int bitXor(int x, int y) {
  *   Rating: 1
  */
 int thirdBits(void) {
-    // TODO: FAIL - REMOVE THE FOR LOOP
-    int bit_offset = 3;
-    
-    long int_byte_size = sizeof(int);
-    long int_bit_size = int_byte_size * 8;
-    
-    int bits_to_return = 0;
-    
-    for(int i = 0; i < int_bit_size; i = i + 1) {
-        bits_to_return = bits_to_return | 1;
-        bits_to_return = bits_to_return << bit_offset;
-    }
+  // TODO: FAIL - REMOVE THE FOR LOOP
+  int bit_offset = 3;
+
+  long int_byte_size = sizeof(int);
+  long int_bit_size = int_byte_size * 8;
+
+  int bits_to_return = 0;
+
+  for (int i = 0; i < int_bit_size; i = i + 1) {
     bits_to_return = bits_to_return | 1;
-    // printf("int bit size: %lu\n", int_bit_size);
-    // printf("int byte size: %lu\n", int_byte_size);
-    // printBits(sizeof(bits_to_return), &bits_to_return);
-    
-    return bits_to_return;
+    bits_to_return = bits_to_return << bit_offset;
+  }
+  bits_to_return = bits_to_return | 1;
+  // printf("int bit size: %lu\n", int_bit_size);
+  // printf("int byte size: %lu\n", int_byte_size);
+  // printBits(sizeof(bits_to_return), &bits_to_return);
+
+  return bits_to_return;
 }
 
 
@@ -250,31 +250,31 @@ int thirdBits(void) {
  *   Rating: 2
  */
 int fitsBits(int x, int n) {
-    // Twos complement reading
-    // https://www.cs.cornell.edu/~tomf/notes/cps104/twoscomp.html
-    
-    // INCORRECT SOLUTION
-    // fitsBits(5,3) = 0         5 = number 3 = bits to support
-    // Not negative, return 0
-    // fitsBits(-4,3) = 1   -   -4 = number 3 = bits to support
-    // if (2 ^ n - 1) < x
-    //     continue
-    // 100 -> 011
-    // int max_bit_value = (int)pow((double) 2, (n - 1));
-    // int can_bit_fit = ((max_bit_value >= x) ? 1 : 0);
-    // int is_x_less_than_zero = (x < 0);
-    
-    // // only process if x < 0, because a twos complement has to be negative
-    // if(!is_x_less_than_zero) {
-    //     can_bit_fit = 0;
-    // }
-    
-    // return can_bit_fit;
-    //--------------------------------------------------------------------------
-    // CORRECT SOLUTION
-    // I think this is still incorrect because I'm not allowed logic operators
-    // :(
-    return (1 << (n - 1) > x);
+  // Twos complement reading
+  // https://www.cs.cornell.edu/~tomf/notes/cps104/twoscomp.html
+
+  // INCORRECT SOLUTION
+  // fitsBits(5,3) = 0         5 = number 3 = bits to support
+  // Not negative, return 0
+  // fitsBits(-4,3) = 1   -   -4 = number 3 = bits to support
+  // if (2 ^ n - 1) < x
+  //     continue
+  // 100 -> 011
+  // int max_bit_value = (int)pow((double) 2, (n - 1));
+  // int can_bit_fit = ((max_bit_value >= x) ? 1 : 0);
+  // int is_x_less_than_zero = (x < 0);
+
+  // // only process if x < 0, because a twos complement has to be negative
+  // if(!is_x_less_than_zero) {
+  //     can_bit_fit = 0;
+  // }
+
+  // return can_bit_fit;
+  //--------------------------------------------------------------------------
+  // CORRECT SOLUTION
+  // I think this is still incorrect because I'm not allowed logic operators
+  // :(
+  return (1 << (n - 1) > x);
 }
 
 
@@ -287,26 +287,26 @@ int fitsBits(int x, int n) {
  *  Rating: 2
  */
 int sign(int x) {
-    // INCORRECT SOLUTION
-    // if(x == 0) {
-    //     return 0;
-    // }
-    // else if(x > 0) {
-    //     return 1;
-    // }
-    // else {
-    //     return -1;
-    // }
-    //--------------------------------------------------------------------------
-    // CORRECT SOLUTION
-    // printBits(sizeof(bits_to_return), &bits_to_return);
-    // Because integers are twos complement solutions this means that a negative
-    // integer will have a 0 as the most significant bit, and a positive number
-    // will have 1 as the most significat bit.
-    // long int_byte_size = sizeof(int);
-    // long int_bit_size = int_byte_size * 8;
-    
-    return 2;
+  // INCORRECT SOLUTION
+  // if(x == 0) {
+  //     return 0;
+  // }
+  // else if(x > 0) {
+  //     return 1;
+  // }
+  // else {
+  //     return -1;
+  // }
+  //--------------------------------------------------------------------------
+  // CORRECT SOLUTION
+  // printBits(sizeof(bits_to_return), &bits_to_return);
+  // Because integers are twos complement solutions this means that a negative
+  // integer will have a 0 as the most significant bit, and a positive number
+  // will have 1 as the most significat bit.
+  // long int_byte_size = sizeof(int);
+  // long int_bit_size = int_byte_size * 8;
+
+  return 2;
 }
 
 
@@ -319,7 +319,7 @@ int sign(int x) {
  *   Rating: 2
  */
 int getByte(int x, int n) {
-    return 2;
+  return 2;
 }
 
 
@@ -333,7 +333,7 @@ int getByte(int x, int n) {
  *   Rating: 3
  */
 int logicalShift(int x, int n) {
-    return 2;
+  return 2;
 }
 
 
@@ -346,7 +346,7 @@ int logicalShift(int x, int n) {
  *   Rating: 3
  */
 int addOK(int x, int y) {
-    return 2;
+  return 2;
 }
 
 
@@ -359,7 +359,7 @@ int addOK(int x, int y) {
  *   Rating: 4
  */
 int bang(int x) {
-    return 2;
+  return 2;
 }
 
 
@@ -372,7 +372,7 @@ int bang(int x) {
  *   Rating: 3
  */
 int conditional(int x, int y, int z) {
-    return 2;
+  return 2;
 }
 
 
@@ -386,26 +386,26 @@ int conditional(int x, int y, int z) {
  *   Rating: 4
  */
 int isPower2(int x) {
-    return 2;
+  return 2;
 }
 
-int main(int argc, char* argv[]) {
-    printf("Beginning main loop in bits.c\n");
-    // int bit_and_result = bitAnd(5, 6);
-    // int bit_and_result = bitAnd(6, 5);
-    // printBits(sizeof(bit_and_result), &bit_and_result);
-    // printf("=======\n");
-    // int bit_or_result = bitXor(4, 5);
-    // int bit_or_result = bitXor(5, 4);
-    // printBits(sizeof(bit_or_result), &bit_or_result);
-    // printf("=======\n");
-    // int third_bit =
-    // thirdBits();
-    // printf("=======\n");
-    // printf("fitsBits(5,3): %i\n", fitsBits(5, 3));
-    // printf("fitsBits(-4,3): %i\n", fitsBits(-4, 3));
-    // printf("=======\n");
-    // printf("sign(-23): %i\n", sign(-23));
-    // printf("sign(0): %i\n", sign(0));
-    // printf("sign(130): %i\n", sign(130));
-}
+// int main(int argc, char* argv[]) {
+// printf("Beginning main loop in bits.c\n");
+// int bit_and_result = bitAnd(5, 6);
+// int bit_and_result = bitAnd(6, 5);
+// printBits(sizeof(bit_and_result), &bit_and_result);
+// printf("=======\n");
+// int bit_or_result = bitXor(4, 5);
+// int bit_or_result = bitXor(5, 4);
+// printBits(sizeof(bit_or_result), &bit_or_result);
+// printf("=======\n");
+// int third_bit =
+// thirdBits();
+// printf("=======\n");
+// printf("fitsBits(5,3): %i\n", fitsBits(5, 3));
+// printf("fitsBits(-4,3): %i\n", fitsBits(-4, 3));
+// printf("=======\n");
+// printf("sign(-23): %i\n", sign(-23));
+// printf("sign(0): %i\n", sign(0));
+// printf("sign(130): %i\n", sign(130));
+// }

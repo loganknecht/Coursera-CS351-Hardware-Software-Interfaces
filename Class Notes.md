@@ -1,7 +1,7 @@
 # Important Notes
 
 ## C Syntax Shortcuts
-  - !!X
+  - !!x
     - Converts X to a boolean value
   - Using << to do base 2 mutliplication
     - This only works for base 2 multiplication
@@ -67,3 +67,81 @@ Nothing of value in this section
   - not(1 or 0) == FALSE
   - not(0 or 1) == FALSE 
   - not(0 or 0) == TRUE
+
+## Section 3
+### Acronyms
+- CISC
+  - Complex Instruction Set Computer
+  - Many different instructions with many different formats
+  - Only a small subset encountered with Linux programs
+- EIP
+  - Extended Instrucution Point
+- IP
+  - Instrucution Point
+- ISA
+  - Instructure Set Architecture: Set of basic instructions available to the compiler.
+- PC
+  - Program Counter
+  - Special register that holds the address of the instruction that will execute next
+  - Called EIP in IA32
+  - Called RIP in x86-64
+- RISC
+  - Reduced Instruction Set Computer
+  - Uses simpler instructions
+
+### Definitions
+- Architecture
+  - The parts of a processor design that one needs to understand to write assembly code
+    -  "What is directly visible to software"
+  - Number of registers
+- Cache
+  - Is a fast piece of memory that exists inside the processor
+- Microarchitecture
+  - These are details of HOW the architecture is implemented
+    - Cache size
+      - Not directly visible to software
+    - Core frequency
+      - Do not know about frequency when writing code
+
+### ISA
+- Defines system's state
+  - registers, program counter, all contents of memory
+- Defines instructions the cpu can execute
+  - What instructions are available to use
+    - add, sub, mov, etc.
+    - defines the effect these have on system's state
+- Defines registers
+  - How many there are
+  - How wide are they
+    - 32 bits, 64 bits, etc
+- Defines memory
+  - How to specify memory location/address modes
+
+### x86 Roadmap
+- x86 is a CISC
+- 8086
+  - 1978
+  - 16 bit processor
+  - 1 MB address space
+- 386
+  - 1985
+  - 32-bit processor
+  - Added flat address
+    - Means single source of addressing for memory, paging was not a concern anymore
+  - 32-bit Linux/gcc environment targets i386 by defaul
+- Pentium 4F
+  - 2005
+  - 64-bit
+  - Sometimes called x86-64
+- Core 2 Duo
+  - 2006
+  - 2 Cores on the processor for parallel processing
+- Core i7
+  - 2008
+  - 4 Cores
+
+### Assembly Programmer's View
+- Program counter
+- Register file
+- Condition codes
+  - Provides status information about operations performed

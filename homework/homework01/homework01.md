@@ -23,6 +23,12 @@ int test(int i, long int l) {
 }
 
 ## Answer
+- by default it returns 0
+- the value returned is a boolean value
+- the return type signature is integer 
+- the long's conversion to the integer type will remove precision
+  - this results in the 2 most significant bytes being cut off
+  - the remaining bytes are the two least significant bytes
 
 
 

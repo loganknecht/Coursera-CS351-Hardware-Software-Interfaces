@@ -1,7 +1,7 @@
 /*
  * CSE 351 HW1 (Data Lab - Pointers)
  *
- * Logan Knecht - <USERID>
+ * <Please put your name and userid here>
  *
  * pointer.c - Source file with your solutions to the Lab.
  *          This is the file you will hand in to your instructor.
@@ -35,7 +35,7 @@ int Funct(arg1, arg2, ...) {
     int var1 = Expr1;
     ...
     int varM = ExprM;
-    
+
     varJ = ExprJ;
     ...
     varN = ExprN;
@@ -43,12 +43,12 @@ int Funct(arg1, arg2, ...) {
 }
 
 Each "Expr" is an expression using ONLY the following:
-1. Integer constants 0 through 255(0xFF), inclusive. You are
+1. Integer constants 0 through 255 (0xFF), inclusive. You are
 not allowed to use big constants such as 0xffffffff.
-2. Function arguments and local variables(no global variables).
+2. Function arguments and local variables (no global variables).
 3. For 1 - 4, only Unary integer operations *, & and Binary integer
 operations - + * are allowed. For the last three, you may also
-use shifts( <<, >>), ~, ==, and ^.
+use shifts ( <<, >>), ~, ==, and ^.
 
 Some of the problems restrict the set of allowed operators even further.
 Each "Expr" may consist of multiple operators. You are not restricted to
@@ -77,32 +77,43 @@ than the word size.
 
 #endif
 
-
 /*
  * Return the size of an integer in bytes.
  */
 int intSize() {
-    // int intArray[10];
-    // int * intPtr1;
-    // int * intPtr2;
-    // TODO: Write code to compute size of an integer.
-    
-    return 2;
-}
 
+    // allowed *, &, -, +, *
+    int intArray[10];
+    int* intPtr1;
+    int* intPtr2;
+    intPtr1 = intArray;
+    intPtr2 = intArray + 1;
+    int size = (int)intPtr2 - (int)intPtr1;
+
+    // printf("intPtr1: %p\n", intPtr1);
+    // printf("intPtr2: %p\n", intPtr2);
+    // printf("size: %d\n", size);
+
+    return size;
+}
 
 /*
  * Return the size of a double in bytes.
  */
 int doubleSize() {
-    // double doubArray[10];
-    // double * doubPtr1;
-    // double * doubPtr2;
-    // TODO: Write code to compute size of a double.
-    
-    return 2;
-}
+    double doubArray[10];
+    double* doubPtr1;
+    double* doubPtr2;
+    doubPtr1 = doubArray;
+    doubPtr2 = doubArray + 1;
+    int size = (int)doubPtr2 - (int)doubPtr1;
 
+    // printf("doubPtr1: %p\n", doubPtr1);
+    // printf("doubPtr2: %p\n", doubPtr2);
+    // printf("size: %f\n", size);
+
+    return size;
+}
 
 /*
  * Return the size of a pointer in bytes.
@@ -111,23 +122,28 @@ int pointerSize() {
     // double * ptrArray[10];
     // double ** ptrPtr1;
     // double ** ptrPtr2;
+
+    double* ptrArray[10];
+    double** ptrPtr1;
+    double** ptrPtr2;
     // TODO: Write code to compute size of a pointer.
-    
+
     return 2;
 }
-
 
 /*
  * Modify intArray[5] to be the value 351 using only &intArray and
  * pointer arithmetic.
  */
 int changeValue() {
+    // *, &, -, +, *, <<, >>, ~, ==, ^
     int intArray[10];
-    // int * intPtr1 = intArray;
-    // int * intPtr2;
-    // TODO: Write code to change value of intArray[5] to 351 using only
-    //       intPtr1 and the + operator.
-    
+    int* intPtr1 = intArray;
+    int* intPtr2;
+
+    intPtr2 = intArray + 5;
+    *intPtr2 = 351;
+
     return intArray[5];
 }
 
@@ -143,7 +159,6 @@ int withinSameBlock(int * ptr1, int * ptr2) {
     return 2;
 }
 
-
 /*
  * Return 1 if ptr points to an element within the specified intArray,
  * 0 otherwise.
@@ -152,8 +167,6 @@ int withinArray(int * intArray, int size, int * ptr) {
     // TODO
     return 2;
 }
-
-
 /*
  * Return x with the n bits that begin at position p inverted (i.e.,
  * turn 0 into 1 and vice versa) and the rest left unchanged. Consider

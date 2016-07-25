@@ -1,0 +1,290 @@
+
+output:     file format mach-o-x86-64
+
+
+Disassembly of section .text:
+
+0000000100000cd0 <_print_bits>:
+   100000cd0:	55                   	push   %rbp
+   100000cd1:	48 89 e5             	mov    %rsp,%rbp
+   100000cd4:	48 83 ec 10          	sub    $0x10,%rsp
+   100000cd8:	b8 04 00 00 00       	mov    $0x4,%eax
+   100000cdd:	89 c1                	mov    %eax,%ecx
+   100000cdf:	48 8d 55 fc          	lea    -0x4(%rbp),%rdx
+   100000ce3:	89 7d fc             	mov    %edi,-0x4(%rbp)
+   100000ce6:	48 89 cf             	mov    %rcx,%rdi
+   100000ce9:	48 89 d6             	mov    %rdx,%rsi
+   100000cec:	e8 9f 01 00 00       	callq  100000e90 <_printBits>
+   100000cf1:	48 83 c4 10          	add    $0x10,%rsp
+   100000cf5:	5d                   	pop    %rbp
+   100000cf6:	c3                   	retq   
+   100000cf7:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+   100000cfe:	00 00 
+
+0000000100000d00 <_smear_bit>:
+   100000d00:	55                   	push   %rbp
+   100000d01:	48 89 e5             	mov    %rsp,%rbp
+   100000d04:	48 83 ec 10          	sub    $0x10,%rsp
+   100000d08:	40 88 f0             	mov    %sil,%al
+   100000d0b:	89 7d fc             	mov    %edi,-0x4(%rbp)
+   100000d0e:	24 01                	and    $0x1,%al
+   100000d10:	88 45 fb             	mov    %al,-0x5(%rbp)
+   100000d13:	f6 45 fb 01          	testb  $0x1,-0x5(%rbp)
+   100000d17:	0f 84 1c 00 00 00    	je     100000d39 <_smear_bit+0x39>
+   100000d1d:	48 8d 3d 40 02 00 00 	lea    0x240(%rip),%rdi        # 100000f64 <_printBits+0xd4>
+   100000d24:	8b 75 fc             	mov    -0x4(%rbp),%esi
+   100000d27:	b0 00                	mov    $0x0,%al
+   100000d29:	e8 06 02 00 00       	callq  100000f34 <_printBits+0xa4>
+   100000d2e:	8b 7d fc             	mov    -0x4(%rbp),%edi
+   100000d31:	89 45 f4             	mov    %eax,-0xc(%rbp)
+   100000d34:	e8 97 ff ff ff       	callq  100000cd0 <_print_bits>
+   100000d39:	8b 45 fc             	mov    -0x4(%rbp),%eax
+   100000d3c:	8b 4d fc             	mov    -0x4(%rbp),%ecx
+   100000d3f:	c1 f9 10             	sar    $0x10,%ecx
+   100000d42:	09 c8                	or     %ecx,%eax
+   100000d44:	89 45 fc             	mov    %eax,-0x4(%rbp)
+   100000d47:	f6 45 fb 01          	testb  $0x1,-0x5(%rbp)
+   100000d4b:	0f 84 08 00 00 00    	je     100000d59 <_smear_bit+0x59>
+   100000d51:	8b 7d fc             	mov    -0x4(%rbp),%edi
+   100000d54:	e8 77 ff ff ff       	callq  100000cd0 <_print_bits>
+   100000d59:	8b 45 fc             	mov    -0x4(%rbp),%eax
+   100000d5c:	8b 4d fc             	mov    -0x4(%rbp),%ecx
+   100000d5f:	c1 f9 08             	sar    $0x8,%ecx
+   100000d62:	09 c8                	or     %ecx,%eax
+   100000d64:	89 45 fc             	mov    %eax,-0x4(%rbp)
+   100000d67:	f6 45 fb 01          	testb  $0x1,-0x5(%rbp)
+   100000d6b:	0f 84 08 00 00 00    	je     100000d79 <_smear_bit+0x79>
+   100000d71:	8b 7d fc             	mov    -0x4(%rbp),%edi
+   100000d74:	e8 57 ff ff ff       	callq  100000cd0 <_print_bits>
+   100000d79:	8b 45 fc             	mov    -0x4(%rbp),%eax
+   100000d7c:	8b 4d fc             	mov    -0x4(%rbp),%ecx
+   100000d7f:	c1 f9 04             	sar    $0x4,%ecx
+   100000d82:	09 c8                	or     %ecx,%eax
+   100000d84:	89 45 fc             	mov    %eax,-0x4(%rbp)
+   100000d87:	f6 45 fb 01          	testb  $0x1,-0x5(%rbp)
+   100000d8b:	0f 84 08 00 00 00    	je     100000d99 <_smear_bit+0x99>
+   100000d91:	8b 7d fc             	mov    -0x4(%rbp),%edi
+   100000d94:	e8 37 ff ff ff       	callq  100000cd0 <_print_bits>
+   100000d99:	8b 45 fc             	mov    -0x4(%rbp),%eax
+   100000d9c:	8b 4d fc             	mov    -0x4(%rbp),%ecx
+   100000d9f:	c1 f9 02             	sar    $0x2,%ecx
+   100000da2:	09 c8                	or     %ecx,%eax
+   100000da4:	89 45 fc             	mov    %eax,-0x4(%rbp)
+   100000da7:	f6 45 fb 01          	testb  $0x1,-0x5(%rbp)
+   100000dab:	0f 84 08 00 00 00    	je     100000db9 <_smear_bit+0xb9>
+   100000db1:	8b 7d fc             	mov    -0x4(%rbp),%edi
+   100000db4:	e8 17 ff ff ff       	callq  100000cd0 <_print_bits>
+   100000db9:	8b 45 fc             	mov    -0x4(%rbp),%eax
+   100000dbc:	8b 4d fc             	mov    -0x4(%rbp),%ecx
+   100000dbf:	c1 f9 01             	sar    $0x1,%ecx
+   100000dc2:	09 c8                	or     %ecx,%eax
+   100000dc4:	89 45 fc             	mov    %eax,-0x4(%rbp)
+   100000dc7:	f6 45 fb 01          	testb  $0x1,-0x5(%rbp)
+   100000dcb:	0f 84 08 00 00 00    	je     100000dd9 <_smear_bit+0xd9>
+   100000dd1:	8b 7d fc             	mov    -0x4(%rbp),%edi
+   100000dd4:	e8 f7 fe ff ff       	callq  100000cd0 <_print_bits>
+   100000dd9:	8b 45 fc             	mov    -0x4(%rbp),%eax
+   100000ddc:	48 83 c4 10          	add    $0x10,%rsp
+   100000de0:	5d                   	pop    %rbp
+   100000de1:	c3                   	retq   
+   100000de2:	66 66 66 66 66 2e 0f 	data16 data16 data16 data16 nopw %cs:0x0(%rax,%rax,1)
+   100000de9:	1f 84 00 00 00 00 00 
+
+0000000100000df0 <_main>:
+   100000df0:	55                   	push   %rbp
+   100000df1:	48 89 e5             	mov    %rsp,%rbp
+   100000df4:	48 83 ec 30          	sub    $0x30,%rsp
+   100000df8:	48 8d 05 73 01 00 00 	lea    0x173(%rip),%rax        # 100000f72 <_printBits+0xe2>
+   100000dff:	c7 45 fc 00 00 00 00 	movl   $0x0,-0x4(%rbp)
+   100000e06:	89 7d f8             	mov    %edi,-0x8(%rbp)
+   100000e09:	48 89 75 f0          	mov    %rsi,-0x10(%rbp)
+   100000e0d:	48 89 c7             	mov    %rax,%rdi
+   100000e10:	b0 00                	mov    $0x0,%al
+   100000e12:	e8 1d 01 00 00       	callq  100000f34 <_printBits+0xa4>
+   100000e17:	c7 45 ec 04 00 00 00 	movl   $0x4,-0x14(%rbp)
+   100000e1e:	8b 4d ec             	mov    -0x14(%rbp),%ecx
+   100000e21:	c1 e1 03             	shl    $0x3,%ecx
+   100000e24:	89 4d e8             	mov    %ecx,-0x18(%rbp)
+   100000e27:	c7 45 e4 01 00 00 00 	movl   $0x1,-0x1c(%rbp)
+   100000e2e:	c7 45 e0 00 00 00 00 	movl   $0x0,-0x20(%rbp)
+   100000e35:	89 45 dc             	mov    %eax,-0x24(%rbp)
+   100000e38:	8b 45 e0             	mov    -0x20(%rbp),%eax
+   100000e3b:	3b 45 e8             	cmp    -0x18(%rbp),%eax
+   100000e3e:	0f 8d 38 00 00 00    	jge    100000e7c <_main+0x8c>
+   100000e44:	48 8d 3d 42 01 00 00 	lea    0x142(%rip),%rdi        # 100000f8d <_printBits+0xfd>
+   100000e4b:	b0 00                	mov    $0x0,%al
+   100000e4d:	e8 e2 00 00 00       	callq  100000f34 <_printBits+0xa4>
+   100000e52:	be 01 00 00 00       	mov    $0x1,%esi
+   100000e57:	8b 7d e4             	mov    -0x1c(%rbp),%edi
+   100000e5a:	89 45 d8             	mov    %eax,-0x28(%rbp)
+   100000e5d:	e8 9e fe ff ff       	callq  100000d00 <_smear_bit>
+   100000e62:	8b 75 e4             	mov    -0x1c(%rbp),%esi
+   100000e65:	c1 e6 01             	shl    $0x1,%esi
+   100000e68:	89 75 e4             	mov    %esi,-0x1c(%rbp)
+   100000e6b:	89 45 d4             	mov    %eax,-0x2c(%rbp)
+   100000e6e:	8b 45 e0             	mov    -0x20(%rbp),%eax
+   100000e71:	83 c0 01             	add    $0x1,%eax
+   100000e74:	89 45 e0             	mov    %eax,-0x20(%rbp)
+   100000e77:	e9 bc ff ff ff       	jmpq   100000e38 <_main+0x48>
+   100000e7c:	8b 45 fc             	mov    -0x4(%rbp),%eax
+   100000e7f:	48 83 c4 30          	add    $0x30,%rsp
+   100000e83:	5d                   	pop    %rbp
+   100000e84:	c3                   	retq   
+   100000e85:	90                   	nop
+   100000e86:	90                   	nop
+   100000e87:	90                   	nop
+   100000e88:	90                   	nop
+   100000e89:	90                   	nop
+   100000e8a:	90                   	nop
+   100000e8b:	90                   	nop
+   100000e8c:	90                   	nop
+   100000e8d:	90                   	nop
+   100000e8e:	90                   	nop
+   100000e8f:	90                   	nop
+
+0000000100000e90 <_printBits>:
+   100000e90:	55                   	push   %rbp
+   100000e91:	48 89 e5             	mov    %rsp,%rbp
+   100000e94:	48 83 ec 30          	sub    $0x30,%rsp
+   100000e98:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+   100000e9c:	48 89 75 f0          	mov    %rsi,-0x10(%rbp)
+   100000ea0:	48 8b 75 f0          	mov    -0x10(%rbp),%rsi
+   100000ea4:	48 89 75 e8          	mov    %rsi,-0x18(%rbp)
+   100000ea8:	48 8b 75 f8          	mov    -0x8(%rbp),%rsi
+   100000eac:	48 83 ee 01          	sub    $0x1,%rsi
+   100000eb0:	89 f0                	mov    %esi,%eax
+   100000eb2:	89 45 e0             	mov    %eax,-0x20(%rbp)
+   100000eb5:	83 7d e0 00          	cmpl   $0x0,-0x20(%rbp)
+   100000eb9:	0f 8c 60 00 00 00    	jl     100000f1f <_printBits+0x8f>
+   100000ebf:	c7 45 dc 07 00 00 00 	movl   $0x7,-0x24(%rbp)
+   100000ec6:	83 7d dc 00          	cmpl   $0x0,-0x24(%rbp)
+   100000eca:	0f 8c 3c 00 00 00    	jl     100000f0c <_printBits+0x7c>
+   100000ed0:	48 8d 3d d8 00 00 00 	lea    0xd8(%rip),%rdi        # 100000faf <_printBits+0x11f>
+   100000ed7:	48 63 45 e0          	movslq -0x20(%rbp),%rax
+   100000edb:	48 8b 4d e8          	mov    -0x18(%rbp),%rcx
+   100000edf:	0f b6 14 01          	movzbl (%rcx,%rax,1),%edx
+   100000ee3:	8b 4d dc             	mov    -0x24(%rbp),%ecx
+   100000ee6:	d3 fa                	sar    %cl,%edx
+   100000ee8:	83 e2 01             	and    $0x1,%edx
+   100000eeb:	88 d1                	mov    %dl,%cl
+   100000eed:	88 4d e7             	mov    %cl,-0x19(%rbp)
+   100000ef0:	0f b6 75 e7          	movzbl -0x19(%rbp),%esi
+   100000ef4:	b0 00                	mov    $0x0,%al
+   100000ef6:	e8 39 00 00 00       	callq  100000f34 <_printBits+0xa4>
+   100000efb:	89 45 d8             	mov    %eax,-0x28(%rbp)
+   100000efe:	8b 45 dc             	mov    -0x24(%rbp),%eax
+   100000f01:	83 c0 ff             	add    $0xffffffff,%eax
+   100000f04:	89 45 dc             	mov    %eax,-0x24(%rbp)
+   100000f07:	e9 ba ff ff ff       	jmpq   100000ec6 <_printBits+0x36>
+   100000f0c:	e9 00 00 00 00       	jmpq   100000f11 <_printBits+0x81>
+   100000f11:	8b 45 e0             	mov    -0x20(%rbp),%eax
+   100000f14:	83 c0 ff             	add    $0xffffffff,%eax
+   100000f17:	89 45 e0             	mov    %eax,-0x20(%rbp)
+   100000f1a:	e9 96 ff ff ff       	jmpq   100000eb5 <_printBits+0x25>
+   100000f1f:	48 8d 3d 8c 00 00 00 	lea    0x8c(%rip),%rdi        # 100000fb2 <_printBits+0x122>
+   100000f26:	e8 0f 00 00 00       	callq  100000f3a <_printBits+0xaa>
+   100000f2b:	89 45 d4             	mov    %eax,-0x2c(%rbp)
+   100000f2e:	48 83 c4 30          	add    $0x30,%rsp
+   100000f32:	5d                   	pop    %rbp
+   100000f33:	c3                   	retq   
+
+Disassembly of section __TEXT.__stubs:
+
+0000000100000f34 <__TEXT.__stubs>:
+   100000f34:	ff 25 d6 00 00 00    	jmpq   *0xd6(%rip)        # 100001010 <_printBits+0x180>
+   100000f3a:	ff 25 d8 00 00 00    	jmpq   *0xd8(%rip)        # 100001018 <_printBits+0x188>
+
+Disassembly of section __TEXT.__stub_helper:
+
+0000000100000f40 <__TEXT.__stub_helper>:
+   100000f40:	4c 8d 1d c1 00 00 00 	lea    0xc1(%rip),%r11        # 100001008 <_printBits+0x178>
+   100000f47:	41 53                	push   %r11
+   100000f49:	ff 25 b1 00 00 00    	jmpq   *0xb1(%rip)        # 100001000 <_printBits+0x170>
+   100000f4f:	90                   	nop
+   100000f50:	68 00 00 00 00       	pushq  $0x0
+   100000f55:	e9 e6 ff ff ff       	jmpq   100000f40 <_printBits+0xb0>
+   100000f5a:	68 0e 00 00 00       	pushq  $0xe
+   100000f5f:	e9 dc ff ff ff       	jmpq   100000f40 <_printBits+0xb0>
+
+Disassembly of section .cstring:
+
+0000000100000f64 <.cstring>:
+   100000f64:	53                   	push   %rbx
+   100000f65:	6d                   	insl   (%dx),%es:(%rdi)
+   100000f66:	65 61                	gs (bad) 
+   100000f68:	72 69                	jb     100000fd3 <_printBits+0x143>
+   100000f6a:	6e                   	outsb  %ds:(%rsi),(%dx)
+   100000f6b:	67 3a 20             	cmp    (%eax),%ah
+   100000f6e:	25 64 0a 00 42       	and    $0x42000a64,%eax
+   100000f73:	65 67 69 6e 6e 69 6e 	imul   $0x20676e69,%gs:0x6e(%esi),%ebp
+   100000f7a:	67 20 
+   100000f7c:	6d                   	insl   (%dx),%es:(%rdi)
+   100000f7d:	61                   	(bad)  
+   100000f7e:	69 6e 20 62 69 74 73 	imul   $0x73746962,0x20(%rsi),%ebp
+   100000f85:	6d                   	insl   (%dx),%es:(%rdi)
+   100000f86:	65 61                	gs (bad) 
+   100000f88:	72 2e                	jb     100000fb8 <_printBits+0x128>
+   100000f8a:	63 0a                	movslq (%rdx),%ecx
+   100000f8c:	00 3d 3d 3d 3d 3d    	add    %bh,0x3d3d3d3d(%rip)        # 13d3d4ccf <_printBits+0x3d3d3e3f>
+   100000f92:	3d 3d 3d 3d 3d       	cmp    $0x3d3d3d3d,%eax
+   100000f97:	3d 3d 3d 3d 3d       	cmp    $0x3d3d3d3d,%eax
+   100000f9c:	3d 3d 3d 3d 3d       	cmp    $0x3d3d3d3d,%eax
+   100000fa1:	3d 3d 3d 3d 3d       	cmp    $0x3d3d3d3d,%eax
+   100000fa6:	3d 3d 3d 3d 3d       	cmp    $0x3d3d3d3d,%eax
+   100000fab:	3d 3d 0a 00 25       	cmp    $0x25000a3d,%eax
+   100000fb0:	75 00                	jne    100000fb2 <_printBits+0x122>
+	...
+
+Disassembly of section __TEXT.__unwind_info:
+
+0000000100000fb4 <__TEXT.__unwind_info>:
+   100000fb4:	01 00                	add    %eax,(%rax)
+   100000fb6:	00 00                	add    %al,(%rax)
+   100000fb8:	1c 00                	sbb    $0x0,%al
+   100000fba:	00 00                	add    %al,(%rax)
+   100000fbc:	00 00                	add    %al,(%rax)
+   100000fbe:	00 00                	add    %al,(%rax)
+   100000fc0:	1c 00                	sbb    $0x0,%al
+   100000fc2:	00 00                	add    %al,(%rax)
+   100000fc4:	00 00                	add    %al,(%rax)
+   100000fc6:	00 00                	add    %al,(%rax)
+   100000fc8:	1c 00                	sbb    $0x0,%al
+   100000fca:	00 00                	add    %al,(%rax)
+   100000fcc:	02 00                	add    (%rax),%al
+   100000fce:	00 00                	add    %al,(%rax)
+   100000fd0:	d0 0c 00             	rorb   (%rax,%rax,1)
+   100000fd3:	00 34 00             	add    %dh,(%rax,%rax,1)
+   100000fd6:	00 00                	add    %al,(%rax)
+   100000fd8:	34 00                	xor    $0x0,%al
+   100000fda:	00 00                	add    %al,(%rax)
+   100000fdc:	35 0f 00 00 00       	xor    $0xf,%eax
+   100000fe1:	00 00                	add    %al,(%rax)
+   100000fe3:	00 34 00             	add    %dh,(%rax,%rax,1)
+   100000fe6:	00 00                	add    %al,(%rax)
+   100000fe8:	03 00                	add    (%rax),%eax
+   100000fea:	00 00                	add    %al,(%rax)
+   100000fec:	0c 00                	or     $0x0,%al
+   100000fee:	01 00                	add    %eax,(%rax)
+   100000ff0:	10 00                	adc    %al,(%rax)
+   100000ff2:	01 00                	add    %eax,(%rax)
+   100000ff4:	00 00                	add    %al,(%rax)
+   100000ff6:	00 00                	add    %al,(%rax)
+   100000ff8:	00 00                	add    %al,(%rax)
+   100000ffa:	00 01                	add    %al,(%rcx)
+
+Disassembly of section __DATA.__nl_symbol_ptr:
+
+0000000100001000 <__DATA.__nl_symbol_ptr>:
+	...
+
+Disassembly of section __DATA.__la_symbol_ptr:
+
+0000000100001010 <__DATA.__la_symbol_ptr>:
+   100001010:	50                   	push   %rax
+   100001011:	0f 00 00             	sldt   (%rax)
+   100001014:	01 00                	add    %eax,(%rax)
+   100001016:	00 00                	add    %al,(%rax)
+   100001018:	5a                   	pop    %rdx
+   100001019:	0f 00 00             	sldt   (%rax)
+   10000101c:	01 00                	add    %eax,(%rax)
+	...

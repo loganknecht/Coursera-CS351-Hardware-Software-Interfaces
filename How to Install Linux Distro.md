@@ -1,0 +1,4 @@
+- brew install docker
+- alfred: docker quickstart terminal
+- docker pull nachinius/c-dev
+- docker run -i -v "$PWD":/usr/src/app -w /usr/src/app nachinius/c-dev /bin/bash

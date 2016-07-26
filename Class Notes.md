@@ -145,3 +145,13 @@ Nothing of value in this section
 - Register file
 - Condition codes
   - Provides status information about operations performed
+
+## Section 4
+%eax == The value in the register
+(%eax) == The memory address of the value for the register %eax
+
+int eax == %eax    // These are the same
+int* eax == (%eax) // These are the same
+
+compile namer: http://www.swansontec.com/sregisters.html
+

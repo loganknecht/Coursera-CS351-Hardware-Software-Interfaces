@@ -11,7 +11,6 @@ C. K = 60:
 D. K = -112:
 
 ## Answer
-2
 
 
 
@@ -167,6 +166,7 @@ Why does objdump -t appear to work on your program, but not on others?
 The final column is the symbol's name. These are the names of the C functions.
 
 ### Part B
+shl - shifts left
 
 ### Part C
 

@@ -218,23 +218,35 @@ int bitXor(int x, int y) {
  *   Rating: 1
  */
 int thirdBits(void) {
-  // TODO: FAIL - REMOVE THE FOR LOOP
-  int bit_offset = 3;
+  // // TODO: FAIL - REMOVE THE FOR LOOP
+  // int bit_offset = 3;
 
-  long int_byte_size = sizeof(int);
-  long int_bit_size = int_byte_size * 8;
+  // long int_byte_size = sizeof(int);
+  // long int_bit_size = int_byte_size * 8;
 
+  // int bits_to_return = 0;
+
+  // for (int i = 0; i < int_bit_size; i = i + 1) {
+  //   bits_to_return = bits_to_return | 1;
+  //   bits_to_return = bits_to_return << bit_offset;
+  // }
+  // bits_to_return = bits_to_return | 1;
+  // // printf("int bit size: %lu\n", int_bit_size);
+  // // printf("int byte size: %lu\n", int_byte_size);
+  // // printBits(sizeof(bits_to_return), &bits_to_return);
+
+  //----------------------------------------------------------------------------
   int bits_to_return = 0;
+  int constant = 73;
+  bits_to_return = bits_to_return | constant;
+  bits_to_return = bits_to_return << 9;
+  bits_to_return = bits_to_return | constant;
+  bits_to_return = bits_to_return << 9;
+  bits_to_return = bits_to_return | constant;
+  bits_to_return = bits_to_return << 9;
 
-  for (int i = 0; i < int_bit_size; i = i + 1) {
-    bits_to_return = bits_to_return | 1;
-    bits_to_return = bits_to_return << bit_offset;
-  }
-  bits_to_return = bits_to_return | 1;
-  // printf("int bit size: %lu\n", int_bit_size);
-  // printf("int byte size: %lu\n", int_byte_size);
-  // printBits(sizeof(bits_to_return), &bits_to_return);
-
+  // TODO: Fix this later
+  // this is what the solution should look like ish.
   return bits_to_return;
 }
 
